@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Mainavigate from "./components/mainavigate";
 import DashBoard from "./pages/dashboard";
@@ -9,7 +9,9 @@ import AddNewProduct from "./pages/addNewProduct";
 import Auth from "./components/formAuth";
 
 function App() {
-  const [editProd, setEditProd] = useState(null);
+  const [editProd, setEditProd] = useCallback(() => {
+    return useState(null);
+  }, []);
   return (
     <div className="App">
       <BrowserRouter>
