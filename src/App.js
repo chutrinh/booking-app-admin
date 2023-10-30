@@ -13,24 +13,23 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Mainavigate>
-          <Routes>
-            <Route path="/" element={<Auth setEditProd={setEditProd} />} />
-            <Route
-              path="/dashboard"
-              element={<DashBoard setEditProd={setEditProd} />}
-            />
-            <Route
-              path="/product"
-              element={<Product setEditProd={setEditProd} />}
-            />
-            <Route path="/chat" element={<Chat setEditProd={setEditProd} />} />
-            <Route
-              path="/add-new-product"
-              element={<AddNewProduct editProd={editProd} />}
-            />
-          </Routes>
-        </Mainavigate>
+        <Mainavigate />
+        <Routes>
+          <Route path="/" element={<Auth setEditProd={setEditProd} />} />
+          <Route
+            path="/dashboard"
+            element={<DashBoard setEditProd={setEditProd} />}
+          />
+          <Route
+            path="/product"
+            element={<Product setEditProd={setEditProd} />}
+          />
+          <Route path="/chat" element={<Chat setEditProd={setEditProd} />} />
+          <Route
+            path="/add-new-product"
+            element={<AddNewProduct editProd={editProd} />}
+          />
+        </Routes>
       </BrowserRouter>
     </div>
   );
