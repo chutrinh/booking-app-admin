@@ -38,6 +38,7 @@ function FormAuth() {
         }
       })
       .catch((error) => {
+        setLoading(false);
         alert(error.message);
       });
   };
