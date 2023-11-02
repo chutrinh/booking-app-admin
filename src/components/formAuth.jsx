@@ -3,12 +3,15 @@ import { useNavigate } from "react-router-dom";
 import classes from "./formAuth.module.css";
 import ReactDom from "react-dom";
 import axios from "axios";
+import { useState } from "react";
 
 function FormAuth() {
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const email = useRef();
   const password = useRef();
   const handleLogin = () => {
+    setLoading(true);
     axios("https://booking-app-agfh.onrender.com/auth/admin/login", {
       headers: {
         "Content-Type": "application/json",
@@ -22,6 +25,7 @@ function FormAuth() {
     })
       .then((response) => {
         if (response.data.status === 200) {
+          setLoading(false);
           alert(response.data.message);
           if (response.data.data.role === "admin") {
             navigate("/dashboard");
@@ -54,7 +58,17 @@ function FormAuth() {
           placeholder="Password"
           defaultValue="123"
         />
-        <button onClick={handleLogin}>Login</button>
+        <button onClick={handleLogin}>
+          Login
+          {loading && (
+            <span
+              className="spinner-border ms-4 align-middle text-danger"
+              role="status"
+            >
+              <span className="visually-hidden">Loading...</span>
+            </span>
+          )}
+        </button>
       </div>
     </div>,
     document.body
