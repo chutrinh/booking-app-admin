@@ -126,7 +126,7 @@ function AddNewProduct({ editProd }) {
           ></textarea>
         </div>
         <div className="mb-3">
-          <label className="form-label">Upload Image (5 images)</label>
+          <label className="form-label">Upload Image (4 images)</label>
           <input ref={images} type="file" multiple className="form-control" />
         </div>
         <button
