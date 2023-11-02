@@ -42,8 +42,18 @@ function FormAuth() {
     <div className="position-fixed top-0 w-100 h-100 bg-dark">
       <div className={classes["login"]}>
         <h1>Login</h1>
-        <input ref={email} type="text" placeholder="email" />
-        <input ref={password} type="password" placeholder="Password" />
+        <input
+          ref={email}
+          type="text"
+          placeholder="email"
+          defaultValue="admin@gmail.com"
+        />
+        <input
+          ref={password}
+          type="password"
+          placeholder="Password"
+          defaultValue="123"
+        />
         <button onClick={handleLogin}>Login</button>
       </div>
     </div>,
