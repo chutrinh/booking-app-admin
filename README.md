@@ -9,13 +9,13 @@ This is the admin page where you can add, edit, and delete any product. Addition
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/chutrinh/e-commerce-admin.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd e-commerce-admin
 ```
 
 Install dependencies
@@ -37,4 +37,11 @@ Start the server
 - delete a product
 - edit a product
 - chat with customers
+
+
+## Tech Stack
+
+**admin:** React, bootstrap
+
+**Server:** Node, Express
 
